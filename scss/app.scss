@@ -1,0 +1,53 @@
+$accent: #e8504f;
+$bgaccent: #f63c3c;
+$bodyBase: #787579;
+$navBase: #352d2f;
+$greyText: #959595;
+$brown: #30282a;
+
+@function rem($size) { @return #{$size / 16px;}rem; }
+
+@function letterspacing($kerning, $pixelHeight) {
+  $rem: $pixelHeight/16;
+  $size: $kerning/1000;
+  @return #{$rem*$size}rem;
+}
+
+@mixin button($background, $color) {
+  display: block;
+  margin: 0 auto;
+  height: rem(50px);
+  width: rem(230px);
+  background: $background;
+
+  color: $color;
+  font-family: 'teko', sans-serif;
+  font-size: rem(20px);
+  font-weight: 300;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: .175rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: rem(50px);
+}
+
+@mixin background-cover {
+  background-position: center center;
+  background-repeat: none;
+  background-size: cover;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  padding: 0;
+  padding-top: rem(70px);
+  margin:0;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: rem(16px);
+  background: white;
+
+}
